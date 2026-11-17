@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://s7aa6udv8hkd" path="res://assets/icon.svg" id="2_ky53y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mprnj"]
-size = Vector2(24, 24)
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhbfv"]
+size = Vector2(32, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=106720472]
 script = ExtResource("1_h00vy")
@@ -17,3 +20,12 @@ texture = ExtResource("2_ky53y")
 shape = SubResource("RectangleShape2D_mprnj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1184854531]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1828887601]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=396550562]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_yhbfv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
