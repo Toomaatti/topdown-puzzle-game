@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://drhobo1tgu8v1"]
+
+[ext_resource type="PackedScene" uid="uid://d1ddhyvu7eyjv" path="res://scenes/Player/Player.tscn" id="1_8v77p"]
+
+[node name="TestRoom" type="Node2D" unique_id=769740909]
+
+[node name="Floor" type="ColorRect" parent="." unique_id=511984718]
+z_index = -10
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.13725491, 0.15686275, 0.20784314, 0.77254903)
+
+[node name="Player" parent="." unique_id=106720472 instance=ExtResource("1_8v77p")]
+position = Vector2(960, 540)
