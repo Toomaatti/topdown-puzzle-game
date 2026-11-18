@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://dpfdpigsl51l5"]
 
 [ext_resource type="Script" uid="uid://50y56v001yeh" path="res://scripts/Objects/test.gd" id="1_amvna"]
-[ext_resource type="Texture2D" uid="uid://s7aa6udv8hkd" path="res://assets/icon.svg" id="1_dag7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mprnj"]
 
 [node name="Test" type="StaticBody2D" unique_id=1751356882 groups=["objects"]]
 script = ExtResource("1_amvna")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1602760384]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_dag7j")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=347881731]
 shape = SubResource("RectangleShape2D_mprnj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1689847391]
+color = Color(1, 0, 0.105882354, 1)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
