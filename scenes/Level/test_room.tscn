@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://drhobo1tgu8v1"]
 
 [ext_resource type="PackedScene" uid="uid://d1ddhyvu7eyjv" path="res://scenes/Player/Player.tscn" id="1_8v77p"]
-[ext_resource type="PackedScene" uid="uid://dpfdpigsl51l5" path="res://scenes/Objects/Test.tscn" id="2_yr6uj"]
+[ext_resource type="PackedScene" uid="uid://dpfdpigsl51l5" path="res://scenes/Objects/Switch.tscn" id="2_yr6uj"]
+[ext_resource type="PackedScene" uid="uid://bxvlrg3kdlpbi" path="res://scenes/Objects/Door.tscn" id="3_rl01x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mprnj"]
 size = Vector2(223.5, 1081)
@@ -19,6 +20,12 @@ color = Color(0.13725491, 0.15686275, 0.20784314, 0.77254903)
 
 [node name="Player" parent="." unique_id=106720472 instance=ExtResource("1_8v77p")]
 position = Vector2(960, 540)
+
+[node name="Camera2D" parent="Player" index="2" unique_id=1184854531]
+limit_left = 3
+limit_top = -1
+limit_right = 1920
+limit_bottom = 1080
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=790466557]
 
@@ -38,5 +45,12 @@ shape = SubResource("RectangleShape2D_yhbfv")
 position = Vector2(966, 1157)
 shape = SubResource("RectangleShape2D_yhbfv")
 
-[node name="Test" parent="." unique_id=1751356882 instance=ExtResource("2_yr6uj")]
-position = Vector2(964, 482)
+[node name="Switch" parent="." unique_id=1751356882 node_paths=PackedStringArray("door") instance=ExtResource("2_yr6uj")]
+position = Vector2(952, 481)
+door = NodePath("../Door")
+
+[node name="Door" parent="." unique_id=1525972474 node_paths=PackedStringArray("switch") instance=ExtResource("3_rl01x")]
+position = Vector2(947, 592)
+switch = NodePath("../Switch")
+
+[editable path="Player"]

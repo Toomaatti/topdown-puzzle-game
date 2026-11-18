@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dpfdpigsl51l5"]
 
-[ext_resource type="Script" uid="uid://50y56v001yeh" path="res://scripts/Objects/test.gd" id="1_amvna"]
+[ext_resource type="Script" uid="uid://50y56v001yeh" path="res://scripts/Objects/switch.gd" id="1_amvna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mprnj"]
 
-[node name="Test" type="StaticBody2D" unique_id=1751356882 groups=["objects"]]
+[node name="Switch" type="StaticBody2D" unique_id=1751356882 groups=["objects"]]
 script = ExtResource("1_amvna")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=347881731]
