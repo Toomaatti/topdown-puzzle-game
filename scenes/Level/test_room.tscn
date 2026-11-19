@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ddhyvu7eyjv" path="res://scenes/Player/Player.tscn" id="1_8v77p"]
 [ext_resource type="PackedScene" uid="uid://dpfdpigsl51l5" path="res://scenes/Objects/Switch.tscn" id="2_yr6uj"]
 [ext_resource type="PackedScene" uid="uid://bxvlrg3kdlpbi" path="res://scenes/Objects/Door.tscn" id="3_rl01x"]
+[ext_resource type="PackedScene" uid="uid://odf1p2vkjgod" path="res://scenes/Objects/Pressure_Plate.tscn" id="4_aq5x3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mprnj"]
 size = Vector2(223.5, 1081)
@@ -52,5 +53,13 @@ door = NodePath("../Door")
 [node name="Door" parent="." unique_id=1525972474 node_paths=PackedStringArray("switch") instance=ExtResource("3_rl01x")]
 position = Vector2(947, 592)
 switch = NodePath("../Switch")
+
+[node name="PressurePlate" parent="." unique_id=1389528746 node_paths=PackedStringArray("door") instance=ExtResource("4_aq5x3")]
+position = Vector2(787, 517)
+door = NodePath("../Door2")
+
+[node name="Door2" parent="." unique_id=1064875307 node_paths=PackedStringArray("switch") instance=ExtResource("3_rl01x")]
+position = Vector2(697, 366)
+switch = NodePath("../PressurePlate")
 
 [editable path="Player"]

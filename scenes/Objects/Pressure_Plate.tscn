@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://odf1p2vkjgod"]
+
+[ext_resource type="Script" uid="uid://bm2aff1b8rooa" path="res://scripts/Objects/pressure_plate.gd" id="1_xymam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhbfv"]
+size = Vector2(42, 42)
+
+[node name="PressurePlate" type="StaticBody2D" unique_id=1389528746]
+script = ExtResource("1_xymam")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=710039913]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1970643101 groups=["objects"]]
+shape = SubResource("RectangleShape2D_yhbfv")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=680539763]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-21, -21, 21, -21, 21, 21, -21, 21)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
