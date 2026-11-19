@@ -24,7 +24,7 @@ func interacting():
 			
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Switches"):
+	if body.is_in_group("Switches") or body.is_in_group("Movable_Objects"):
 		object = body
 		
 

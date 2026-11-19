@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b3pwvypmp0r1h"]
+
+[ext_resource type="Script" uid="uid://bevpomlp300gt" path="res://scripts/Objects/box.gd" id="1_l80vi"]
+[ext_resource type="Texture2D" uid="uid://bm7u7suw67rq3" path="res://assets/Sprites/tile_0190.png" id="1_uusqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mprnj"]
+
+[node name="Box" type="CharacterBody2D" unique_id=1701554773 groups=["Movable_Objects"]]
+motion_mode = 1
+script = ExtResource("1_l80vi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2131456370]
+texture = ExtResource("1_uusqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1125261081]
+shape = SubResource("RectangleShape2D_mprnj")
